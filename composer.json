@@ -1,5 +1,5 @@
 {
-    "name": "axolotl-pm/xoroshiropp",
+    "name": "axolotl-pm/xoroshiro128pp",
     "description": "Xoroshiro128++ random number generator for PocketMine-MP",
     "type": "library",
     "license": "LGPL-3.0",
