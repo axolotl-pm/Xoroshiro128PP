@@ -1,5 +1,5 @@
-# Xoroshiro
-![CI](https://github.com/axolotl-pm/Xoroshiro/workflows/CI/badge.svg)
+# XoroshiroPP
+![CI](https://github.com/axolotl-pm/XoroshiroPP/workflows/CI/badge.svg)
 
 Xoroshiro128++ random number generator, made for use in PocketMine-MP.
 
