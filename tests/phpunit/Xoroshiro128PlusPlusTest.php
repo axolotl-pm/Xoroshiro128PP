@@ -67,7 +67,7 @@ class Xoroshiro128PlusPlusTest extends TestCase{
 	 * @dataProvider rawStates
 	 */
 	public function testRawStateMatchesReferenceImplementation(int $lo, int $hi, array $expected) : void{
-		$random = new Xoroshiro128PlusPlus($lo, $hi);
+		$random = new Xoroshiro128PP($lo, $hi);
 		foreach($expected as $i => $want){
 			self::assertSame($want, $random->nextLong(), "output $i");
 		}
@@ -109,7 +109,7 @@ class Xoroshiro128PlusPlusTest extends TestCase{
 	 * @dataProvider seeds
 	 */
 	public function testFromSeedMatchesReferenceImplementation(int $seed, array $expected) : void{
-		$random = Xoroshiro128PlusPlus::fromSeed($seed);
+		$random = Xoroshiro128PP::fromSeed($seed);
 		foreach($expected as $i => $want){
 			self::assertSame($want, $random->nextLong(), "output $i");
 		}
@@ -131,7 +131,7 @@ class Xoroshiro128PlusPlusTest extends TestCase{
 	 * @dataProvider floatSeeds
 	 */
 	public function testNextFloatMatchesReferenceImplementation(int $seed, array $expected) : void{
-		$random = Xoroshiro128PlusPlus::fromSeed($seed);
+		$random = Xoroshiro128PP::fromSeed($seed);
 		foreach($expected as $i => $want){
 			self::assertEqualsWithDelta($want, $random->nextFloat(), 1e-12, "output $i");
 		}
@@ -142,8 +142,8 @@ class Xoroshiro128PlusPlusTest extends TestCase{
 	 * nothing but zeroes.
 	 */
 	public function testAllZeroStateIsReplaced() : void{
-		$zero = new Xoroshiro128PlusPlus(0, 0);
-		$fallback = new Xoroshiro128PlusPlus(-7046029254386353131, 7640891576956012809);
+		$zero = new Xoroshiro128PP(0, 0);
+		$fallback = new Xoroshiro128PP(-7046029254386353131, 7640891576956012809);
 
 		$outputs = [];
 		for($i = 0; $i < 4; $i++){
@@ -154,7 +154,7 @@ class Xoroshiro128PlusPlusTest extends TestCase{
 	}
 
 	public function testNextFloatStaysInRange() : void{
-		$random = Xoroshiro128PlusPlus::fromSeed(20260824);
+		$random = Xoroshiro128PP::fromSeed(20260824);
 		for($i = 0; $i < 5000; $i++){
 			$value = $random->nextFloat();
 			self::assertGreaterThanOrEqual(0.0, $value);
@@ -163,8 +163,8 @@ class Xoroshiro128PlusPlusTest extends TestCase{
 	}
 
 	public function testSameSeedGivesSameSequence() : void{
-		$a = Xoroshiro128PlusPlus::fromSeed(777);
-		$b = Xoroshiro128PlusPlus::fromSeed(777);
+		$a = Xoroshiro128PP::fromSeed(777);
+		$b = Xoroshiro128PP::fromSeed(777);
 		for($i = 0; $i < 32; $i++){
 			self::assertSame($a->nextLong(), $b->nextLong());
 		}

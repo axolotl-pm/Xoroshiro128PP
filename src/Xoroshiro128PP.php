@@ -30,7 +30,7 @@ use function gmp_or;
 use function gmp_sign;
 use function gmp_xor;
 
-final class Xoroshiro128PlusPlus{
+final class Xoroshiro128PP{
 
 	/** floor(2^64 / phi); the odd stride SplitMix64 walks a seed by to produce the second half of the state */
 	private const GOLDEN_RATIO_64 = "0x9e3779b97f4a7c15";
