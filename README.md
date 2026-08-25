@@ -6,7 +6,7 @@ Xoroshiro128++ random number generator, made for use in PocketMine-MP.
 ## Usage
 
 ```php
-use pocketmine\xoroshiro\Xoroshiro128PP;
+use pocketmine\xoroshiro128pp\Xoroshiro128PP;
 
 $random = Xoroshiro128PP::fromSeed($seed);
 $random->nextLong();   // signed 64-bit

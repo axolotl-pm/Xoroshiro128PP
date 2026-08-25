@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "pocketmine\\xoroshiro\\": "src/"
+            "pocketmine\\xoroshiro128pp\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "pocketmine\\xoroshiro\\": "tests/phpunit/"
+            "pocketmine\\xoroshiro128pp\\": "tests/phpunit/"
         }
     }
 }

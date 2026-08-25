@@ -21,7 +21,7 @@
 
 declare(strict_types=1);
 
-namespace pocketmine\xoroshiro;
+namespace pocketmine\xoroshiro128pp;
 
 use PHPUnit\Framework\TestCase;
 
